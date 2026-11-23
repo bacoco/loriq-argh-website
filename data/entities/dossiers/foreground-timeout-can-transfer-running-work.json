@@ -1,0 +1,128 @@
+{
+  "date_basis": "incident",
+  "event_date": "2026-11-18",
+  "id": "dossier:foreground-timeout-can-transfer-running-work",
+  "relationships": {
+    "dossiers": [
+      "timeout-left-descendants-running",
+      "background-completion-must-own-the-current-task-instance"
+    ],
+    "patterns": [
+      "timeout",
+      "checkpoint"
+    ],
+    "projects": []
+  },
+  "route": "/dossiers/foreground-timeout-can-transfer-running-work/",
+  "schema": "argh/public-entity/v1",
+  "slots": [
+    {
+      "body": [
+        {
+          "en": {
+            "expert": "OpenCode v2.3.1 moves the same process to background execution rather than terminating it when the foreground shell wait expires. It reports completion later.",
+            "kitchen": "A pan is still on the stove when the counter's waiting time expires. Instead of throwing the dish away, the kitchen finishes that same preparation and reports back when it is ready."
+          },
+          "fr": {
+            "cuisine": "Une préparation dure plus longtemps que prévu. Le comptoir n’attend plus, mais la même casserole reste au feu. Le résultat doit revenir quand le travail est terminé.",
+            "expert": "Dans OpenCode v2.3.1, une commande qui dépasse son délai au premier plan n’est plus tuée par défaut : le même processus est transféré en arrière-plan, puis son résultat remonte à sa fin."
+          }
+        }
+      ],
+      "heading": {
+        "en": {
+          "expert": "OpenCode transfers still-running shell work after a foreground timeout",
+          "kitchen": "The counter stops waiting; the cook keeps working"
+        },
+        "fr": {
+          "cuisine": "Le temps au comptoir est fini, pas la préparation",
+          "expert": "OpenCode passe la commande shell en arrière-plan après le délai d’attente"
+        }
+      },
+      "id": "hero",
+      "kind": "hero"
+    },
+    {
+      "body": [
+        {
+          "en": {
+            "expert": "PR #63699 removes the old feature flag. A foreground timeout value of zero now uses the default 120 seconds; an explicit timeout for a command launched in background still stops that command.",
+            "kitchen": "One timer frees the counter to take the next order. A different timer, explicitly set for a job already in the kitchen, can still stop that job."
+          },
+          "fr": {
+            "cuisine": "Le premier minuteur dit quand la salle arrête d’attendre. Un délai d’arrêt donné à une préparation déjà en coulisses peut, lui, l’interrompre.",
+            "expert": "Le changement #63699 rend le transfert systématique à l’expiration du délai de premier plan. Un délai nul au premier plan utilise le défaut de 120 secondes. Le délai d’arrêt explicitement donné à une commande lancée en arrière-plan garde sa fonction."
+          }
+        }
+      ],
+      "heading": {
+        "en": {
+          "expert": "Guest wait and background runtime are separate limits",
+          "kitchen": "Waiting and stopping are different"
+        },
+        "fr": {
+          "cuisine": "Deux horloges, deux effets",
+          "expert": "Le délai de premier plan n’est plus un arrêt de commande"
+        }
+      },
+      "id": "mechanism",
+      "kind": "paragraph"
+    },
+    {
+      "body": [
+        {
+          "en": {
+            "expert": "The November 18 release documents merged PR #63699. The author reports targeted checks and two process-substitution failures also seen on dev in the stated environment. ARGH did not reproduce the behavior or verify every stopping and notification path.",
+            "kitchen": "The November 18 release says this is how its staff now hands off long jobs. We checked the release and change, not an independent live run."
+          },
+          "fr": {
+            "cuisine": "Cette maison annonce avoir changé cette règle le 18 novembre. ARGH a lu le changement sans le rejouer. Ce n’est pas une raison de laisser toutes les casseroles tourner sans surveillance.",
+            "expert": "La publication du 18 novembre cite le correctif fusionné #63699 et le mainteneur décrit des vérifications ciblées avec deux échecs de substitution de processus également signalés sur dev dans son environnement. ARGH n’a pas rejoué le comportement ni validé tous les arrêts et notifications."
+          }
+        }
+      ],
+      "heading": {
+        "en": {
+          "expert": "Released scope, not an independent reproduction",
+          "kitchen": "This kitchen’s rule, not every kitchen’s"
+        },
+        "fr": {
+          "cuisine": "Une règle annoncée dans cette version",
+          "expert": "Comportement annoncé dans la version v2.3.1"
+        }
+      },
+      "id": "current",
+      "kind": "status"
+    },
+    {
+      "body": [
+        {
+          "en": {
+            "expert": "On a harmless long job, check process identity across the handoff, visible running status, one final result, and an explicit cancel path distinct from the wait limit. Continuing versus stopping is a workflow decision, not a default proposal for other harnesses.",
+            "kitchen": "Do not start another pan just because the counter stops waiting. Make the handoff, eventual result and real stop distinguishable."
+          },
+          "fr": {
+            "cuisine": "Quand le comptoir passe la main, ne pas recommencer le plat. Montrer ce qui continue et qui annoncera la fin; garder un vrai bouton d’arrêt.",
+            "expert": "Sur une longue tâche neutre, vérifier identité du processus avant et après la bascule, statut visible, notification finale et différence avec un arrêt demandé. Le choix de poursuivre ou d’arrêter dépend des effets et du budget de la commande."
+          }
+        }
+      ],
+      "heading": {
+        "en": {
+          "expert": "Leading signal: one process and an observable terminal result",
+          "kitchen": "Tell the counter what is still cooking"
+        },
+        "fr": {
+          "cuisine": "Dire ce qui tourne encore",
+          "expert": "Signal à surveiller : une seule commande, un résultat traçable"
+        }
+      },
+      "id": "lesson",
+      "kind": "lesson"
+    }
+  ],
+  "slug": "foreground-timeout-can-transfer-running-work",
+  "template": "dossier",
+  "type": "dossier",
+  "updated_at": "2026-11-23T18:45:00Z"
+}

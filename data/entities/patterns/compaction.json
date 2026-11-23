@@ -21,7 +21,8 @@
       "plan-approval-survives-compaction-within-the-same-scope",
       "restart-preserves-pending-work-not-duplicate-effects",
       "skill-tool-availability-follows-retained-context",
-      "team-state-needs-durable-deltas-not-stream-snapshots"
+      "team-state-needs-durable-deltas-not-stream-snapshots",
+      "unchanged-client-context-must-survive-compaction"
     ]
   },
   "slots": [

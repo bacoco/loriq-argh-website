@@ -1,0 +1,130 @@
+{
+  "date_basis": "incident",
+  "event_date": "2026-11-20",
+  "id": "dossier:unchanged-client-context-must-survive-compaction",
+  "relationships": {
+    "dossiers": [
+      "memory-kept-history-lost-mission",
+      "plan-approval-survives-compaction-within-the-same-scope"
+    ],
+    "patterns": [
+      "compaction",
+      "checkpoint"
+    ],
+    "projects": [
+      "Codex"
+    ]
+  },
+  "route": "/dossiers/unchanged-client-context-must-survive-compaction/",
+  "schema": "argh/public-entity/v1",
+  "slots": [
+    {
+      "body": [
+        {
+          "en": {
+            "expert": "Compaction could drop active additional context while client deduplication suppressed resending the unchanged value. A following turn could then proceed without that input, even though the client had not changed it.",
+            "kitchen": "The prep station gets a shorter notebook, but the active note gets left on the cutting-room floor. Front of house thinks the kitchen already has it and sends nothing new. Neither side notices what went missing."
+          },
+          "fr": {
+            "cuisine": "Au milieu du service, on résume le cahier. Une note toujours valable passe à la trappe. La salle ne la répète pas, puisqu’elle n’a pas changé. La cuisine continue sans cette information.",
+            "expert": "La compaction pouvait écarter un élément de contexte additionnel encore actif. La déduplication du client empêchait ensuite de renvoyer une valeur inchangée. Le passage suivant pouvait donc travailler sans le contexte attendu, même lorsque le client n’avait modifié aucune valeur."
+          }
+        }
+      ],
+      "heading": {
+        "en": {
+          "expert": "Codex preserves live client context through compaction",
+          "kitchen": "A shorter notebook should keep the instruction still in force"
+        },
+        "fr": {
+          "cuisine": "Le mémo encore valable disparaît quand on résume le cahier",
+          "expert": "Codex restaure le contexte client actif après compaction"
+        }
+      },
+      "id": "hero",
+      "kind": "hero"
+    },
+    {
+      "body": [
+        {
+          "en": {
+            "expert": "The patch tracks additional context by history item ID and restores active items when installing complete or prefix compaction results. It preserves ordering and original bounded payloads, leaving queued updates to arrive with their associated input.",
+            "kitchen": "Keep one copy of the current slip where the next cook will read it. Leave unsent slips with the order that will actually bring them in; do not pull them into an earlier order."
+          },
+          "fr": {
+            "cuisine": "On glisse une seule fois chaque note active dans le nouveau cahier, avant la commande qui en a besoin. Une note fraîche qui attend encore son tour arrive avec sa propre commande.",
+            "expert": "Le correctif rattache le contexte actif à ses identifiants d’éléments de l’historique lors de l’installation du résultat de compaction, complète ou par préfixe. Il restaure l’ordre et les contenus bornés. Les mises à jour en file attendent toujours l’entrée à laquelle elles sont associées."
+          }
+        }
+      ],
+      "heading": {
+        "en": {
+          "expert": "Reattach live items without replaying stale input",
+          "kitchen": "Carry the live slips forward"
+        },
+        "fr": {
+          "cuisine": "Garder les notes encore utilisées",
+          "expert": "Reconstruire les éléments actifs dans le bon ordre"
+        }
+      },
+      "id": "mechanism",
+      "kind": "paragraph"
+    },
+    {
+      "body": [
+        {
+          "en": {
+            "expert": "Merged PR #61390 describes local message-context and remote tool-output-context regressions: one active value, no stale values, and placement before the preserved user input. The November 20 version 0.171.0 changelog lists the patch. ARGH did not run those tests.",
+            "kitchen": "The maintainers describe checks for the notebook shortened here and the one shortened elsewhere. We read the change and its release note, not a running service."
+          },
+          "fr": {
+            "cuisine": "L’équipe indique avoir ajouté des essais pour deux façons de raccourcir le cahier. ARGH a lu le correctif et l’annonce, sans l’essayer pendant un service.",
+            "expert": "La PR fusionnée #61390 annonce des régressions pour la compaction locale avec contexte de message et distante avec contexte de retour d’outil : une occurrence active, aucune ancienne valeur, bon ordre avant la requête conservée. Le journal de la version 0.171.0 la référence le 20 novembre. ARGH n’a pas exécuté ces tests."
+          }
+        }
+      ],
+      "heading": {
+        "en": {
+          "expert": "Merged fix documented in version 0.171.0",
+          "kitchen": "What the kitchen actually knows"
+        },
+        "fr": {
+          "cuisine": "Ce qui a été vérifié",
+          "expert": "Correctif fusionné et répertorié dans la version 0.171.0"
+        }
+      },
+      "id": "current",
+      "kind": "status"
+    },
+    {
+      "body": [
+        {
+          "en": {
+            "expert": "Check the reconstructed model input, not only summary success: current context exactly once, no obsolete context, preserved order, and no premature insertion of queued updates. This is a check to design for each harness, not a universal guarantee.",
+            "kitchen": "Make a spot check with a slip nobody needs to send again. It should be there once; the one it replaced should stay out."
+          },
+          "fr": {
+            "cuisine": "Repérer une note qui n’a pas changé et vérifier qu’elle apparaît une fois après le raccourci. Vérifier aussi qu’une note remplacée ne revient pas.",
+            "expert": "Contrôler l’entrée réellement reconstruite après compaction : contexte courant exactement une fois, valeurs obsolètes absentes, ordre préservé, et événements en attente non appliqués trop tôt. Ce contrôle reste à adapter au harnais observé."
+          }
+        }
+      ],
+      "heading": {
+        "en": {
+          "expert": "Leading signal: verify continuity across compaction",
+          "kitchen": "Keep the note the next order still needs"
+        },
+        "fr": {
+          "cuisine": "Un résumé ne doit pas enlever ce dont la prochaine commande dépend",
+          "expert": "Signal à surveiller : contexte invariant après compaction"
+        }
+      },
+      "id": "lesson",
+      "kind": "lesson"
+    }
+  ],
+  "slug": "unchanged-client-context-must-survive-compaction",
+  "template": "dossier",
+  "type": "dossier",
+  "updated_at": "2026-11-23T18:45:00Z"
+}

@@ -31,6 +31,7 @@
       "durable-forks-reuse-recorded-effects-not-new-run-keys",
       "explicit-resume-must-find-the-requested-session",
       "failed-security-review-must-stay-retryable",
+      "foreground-timeout-can-transfer-running-work",
       "interrupted-call-history-can-close-without-replaying-the-effect",
       "local-checkpoint-writes-require-current-ownership",
       "memory-kept-history-lost-mission",
@@ -49,7 +50,8 @@
       "serializable-job-records-do-not-recover-workers",
       "stream-recovery-must-stop-at-the-first-missing-event",
       "task-snapshot-needs-coherent-ordering",
-      "transcript-access-does-not-grant-worker-resume-ownership"
+      "transcript-access-does-not-grant-worker-resume-ownership",
+      "unchanged-client-context-must-survive-compaction"
     ]
   },
   "slots": [

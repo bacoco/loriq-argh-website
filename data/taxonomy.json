@@ -737,6 +737,8 @@
     "wake-startup-must-recheck-reservation-identity-after-preparation": "execution-cycle-vie",
     "later-action-score-must-not-release-an-earlier-pending-review": "validation-preuves",
     "queued-mail-wake-preserves-the-existing-work-attribution": "roles-orchestration",
-    "background-work-keeps-its-originating-turn-permissions": "isolation-concurrence"
+    "background-work-keeps-its-originating-turn-permissions": "isolation-concurrence",
+    "unchanged-client-context-must-survive-compaction": "donnees-memoire-etat",
+    "foreground-timeout-can-transfer-running-work": "execution-cycle-vie"
   }
 }

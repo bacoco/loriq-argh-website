@@ -2,6 +2,22 @@
   "schema": "argh/public-activity/v1",
   "events": [
     {
+      "id": "eff4f402fbd0557dd161f5579368531a869d60ec:dossiers/foreground-timeout-can-transfer-running-work.json",
+      "kind": "new",
+      "entity_path": "dossiers/foreground-timeout-can-transfer-running-work.json",
+      "entity_hash": "c8b0b85d616a13b1875542b008214bfbee469416",
+      "detected_at": "2026-11-23T20:12:30Z",
+      "source_head": "eff4f402fbd0557dd161f5579368531a869d60ec"
+    },
+    {
+      "id": "eff4f402fbd0557dd161f5579368531a869d60ec:dossiers/unchanged-client-context-must-survive-compaction.json",
+      "kind": "new",
+      "entity_path": "dossiers/unchanged-client-context-must-survive-compaction.json",
+      "entity_hash": "75d0b82d4294fb8d5cc4f41b493c73e1fbc734ef",
+      "detected_at": "2026-11-23T20:12:30Z",
+      "source_head": "eff4f402fbd0557dd161f5579368531a869d60ec"
+    },
+    {
       "id": "ebfa8967e1d8ea00bab1c6e458da75d0e4df3b44:dossiers/a-lease-check-does-not-fence-the-later-write.json",
       "kind": "new",
       "entity_path": "dossiers/a-lease-check-does-not-fence-the-later-write.json",

@@ -14,6 +14,7 @@
     ],
     "patterns": [],
     "dossiers": [
+      "foreground-timeout-can-transfer-running-work",
       "settlement-waits-for-observed-background-work",
       "stream-watchdogs-bound-silence-not-total-runtime",
       "timeout-left-descendants-running"

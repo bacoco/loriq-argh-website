@@ -67,6 +67,7 @@
       "skills-cross-harness-convergence",
       "subagent-routing-hidden-capability",
       "subagents-delegation-control-plane",
+      "unchanged-client-context-must-survive-compaction",
       "wake-startup-must-recheck-reservation-identity-after-preparation",
       "worktree-isolation-convergence"
     ]
